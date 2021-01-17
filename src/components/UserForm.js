@@ -1,6 +1,8 @@
 import React from "react";
 import FormUserDetails from "./FormUserDetails";
 import FormPersonalDetails from "./FormPersonalDetails";
+import Confirm from "./Confirm";
+import { Success } from "./Success";
 
 class UserForm extends React.Component {
   constructor() {
@@ -62,9 +64,15 @@ class UserForm extends React.Component {
           />
         );
       case 3:
-        return <h1>Confirm</h1>;
+        return (
+          <Confirm
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+          />
+        );
       case 4:
-        return <h1>Success</h1>;
+        return <Success /> ;
       default:
         console.log("this is a multi-step form built with React using MUI");
     }
